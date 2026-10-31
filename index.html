@@ -7,6 +7,9 @@
       content="width=device-width,initial-scale=1,viewport-fit=cover"
     />
     <meta name="theme-color" content="#f7f4ee" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="UniTask" />
     <title>UniTask — a calmer day</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
@@ -33,6 +36,8 @@
         width: 100%;
         height: 100%;
         overflow: hidden;
+        -webkit-text-size-adjust: 100%;
+        background: var(--bg);
       }
       body {
         background: var(--bg);
@@ -977,9 +982,21 @@
       }
       @media (max-width: 700px) {
         .top {
-          height: 51px;
-          padding: 0 13px;
+          height: calc(51px + env(safe-area-inset-top));
+          padding: env(safe-area-inset-top) 13px 0;
           gap: 9px;
+          background: var(--bg);
+          -webkit-backdrop-filter: none;
+          backdrop-filter: none;
+        }
+        input,
+        textarea,
+        select {
+          font-size: 16px !important;
+        }
+        input[type="checkbox"],
+        input[type="radio"] {
+          font-size: initial !important;
         }
         .brand {
           font-size: 17px;
@@ -1014,7 +1031,7 @@
           padding: 10px 13px;
         }
         .mobilenav {
-          height: 61px;
+          height: calc(61px + env(safe-area-inset-bottom));
           flex: none;
           display: grid;
           grid-template-columns: repeat(3, 1fr);

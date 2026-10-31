@@ -138,6 +138,12 @@
         background: var(--peach);
         color: var(--orange);
       }
+      #settings svg {
+        display: block;
+        width: 18px;
+        height: 18px;
+        margin: auto;
+      }
       .avatar {
         width: 27px;
         height: 27px;
@@ -1314,7 +1320,36 @@
         <div class="spacer"></div>
         <span class="topdate" id="topdate"></span
         ><button class="icon" id="fullscreen" title="Full screen">⛶</button
-        ><button class="icon" id="settings" title="Settings">⚙</button>
+        ><button
+          class="icon"
+          id="settings"
+          type="button"
+          title="Settings"
+          aria-label="Settings"
+        >
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M4 7h7m4 0h5M4 17h3m4 0h9"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+            />
+            <circle
+              cx="13"
+              cy="7"
+              r="2"
+              stroke="currentColor"
+              stroke-width="1.6"
+            />
+            <circle
+              cx="9"
+              cy="17"
+              r="2"
+              stroke="currentColor"
+              stroke-width="1.6"
+            />
+          </svg>
+        </button>
         <div class="avatar" id="avatar">U</div>
       </header>
       <main class="layout" id="layout">
